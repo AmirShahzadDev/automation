@@ -49,7 +49,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Feedback',
-        href: feedback.create(),
+        href: feedback.index(),
         icon: MessageSquare,
     },
 ];

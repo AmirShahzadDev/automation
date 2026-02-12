@@ -11,14 +11,18 @@ import {
     CardTitle,
 } from '@/components/ui/card';
 import AppLayout from '@/layouts/app-layout';
-import { create } from '@/routes/feedback';
+import feedback from '@/routes/feedback';
 import FormTextarea from '@/components/form-textarea';
 import type { BreadcrumbItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Feedback',
-        href: create().url,
+        href: feedback.index().url,
+    },
+    {
+        title: 'Submit feedback',
+        href: feedback.create().url,
     },
 ];
 

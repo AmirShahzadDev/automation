@@ -16,8 +16,10 @@ Route::get('dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('feedback', [FeedbackController::class, 'create'])->name('feedback.create');
+    Route::get('feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+    Route::get('feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
     Route::post('feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+    Route::get('feedback/{feedback}', [FeedbackController::class, 'show'])->name('feedback.show');
 });
 
 require __DIR__.'/settings.php';
